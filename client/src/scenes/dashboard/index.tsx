@@ -1,4 +1,8 @@
-import { Box, useMediaQuery, useTheme } from "@mui/material";
+import DashboardBox from "@/components/DashboardBox";
+import { Box, useMediaQuery } from "@mui/material";
+import Row1 from "./Row1";
+import Row2 from "./Row2";
+import Row3 from "./Row3";
 
 type Props = {};
 
@@ -50,29 +54,29 @@ const gridTemplateSmallScreen = `
 
 const Dashboard = (props: Props) => {
   const isAboveMediumScreen = useMediaQuery("(min-width: 1200px)");
-  const { palette } = useTheme();
   return (
     <Box
       width="100%"
       height="100%"
       display="grid"
       gap="1.5rem"
-      sx={{
-        gridTemplateColumns: "repeat(3,minmax(370px,1fr))",
-        gridTemplateRows: "repeat(10,minmax(60px,1fr))",
-        gridTemplateAreas: gridTemplateLargeScreen,
-      }}
+      sx={
+        isAboveMediumScreen
+          ? {
+              gridTemplateColumns: "repeat(3,minmax(370px,1fr))",
+              gridTemplateRows: "repeat(10,minmax(60px,1fr))",
+              gridTemplateAreas: gridTemplateLargeScreen,
+            }
+          : {
+              gridAutoColumns: "1fr",
+              gridAutoRows: "80px",
+              gridTemplateAreas: gridTemplateSmallScreen,
+            }
+      }
     >
-      <Box gridArea="a" bgcolor="#2475"></Box>
-      <Box gridArea="b" bgcolor="#2475"></Box>
-      <Box gridArea="c" bgcolor="#2475"></Box>
-      <Box gridArea="d" bgcolor="#2475"></Box>
-      <Box gridArea="e" bgcolor="#2475"></Box>
-      <Box gridArea="f" bgcolor="#2475"></Box>
-      <Box gridArea="g" bgcolor="#2475"></Box>
-      <Box gridArea="h" bgcolor="#2475"></Box>
-      <Box gridArea="i" bgcolor="#2475"></Box>
-      <Box gridArea="j" bgcolor="#2475"></Box>
+      <Row1 />
+      <Row2 />
+      <Row3 />
     </Box>
   );
 };
