@@ -4,9 +4,10 @@ import {
   GetProductsResponse,
   GetTransactionsResponse,
 } from "./types";
+import config from "./config";
 
 export const api = createApi({
-  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:1337" }),
+  baseQuery: fetchBaseQuery({ baseUrl: config.baseURL }),
   reducerPath: "main",
   tagTypes: ["Kpis", "Products", "Transactions"],
   endpoints: (build) => ({
