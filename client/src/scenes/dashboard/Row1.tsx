@@ -82,28 +82,12 @@ const Row1 = () => {
           >
             <defs>
               <linearGradient id="colorRevenue" x1="0" y1="0" x2="0" y2="1">
-                <stop
-                  offset="5%"
-                  stopColor={palette.primary[300]}
-                  stopOpacity={0.5}
-                />
-                <stop
-                  offset="95%"
-                  stopColor={palette.primary[300]}
-                  stopOpacity={0}
-                />
+                <stop offset="5%" stopColor="#12EFC8" stopOpacity={0.5} />
+                <stop offset="95%" stopColor="#12EFC8" stopOpacity={0} />
               </linearGradient>
               <linearGradient id="colorExpenses" x1="0" y1="0" x2="0" y2="1">
-                <stop
-                  offset="5%"
-                  stopColor={palette.primary[300]}
-                  stopOpacity={0.5}
-                />
-                <stop
-                  offset="95%"
-                  stopColor={palette.primary[300]}
-                  stopOpacity={0}
-                />
+                <stop offset="5%" stopColor="#12EFC8" stopOpacity={0.5} />
+                <stop offset="95%" stopColor="#12EFC8" stopOpacity={0} />
               </linearGradient>
             </defs>
             <XAxis
@@ -185,7 +169,7 @@ const Row1 = () => {
               yAxisId="left"
               type="monotone"
               dataKey="profit"
-              stroke={palette.tertiary[500]}
+              stroke="#8884D8"
             />
             <Line
               yAxisId="right"
@@ -216,16 +200,8 @@ const Row1 = () => {
           >
             <defs>
               <linearGradient id="colorRevenue" x1="0" y1="0" x2="0" y2="1">
-                <stop
-                  offset="5%"
-                  stopColor={palette.primary[300]}
-                  stopOpacity={0.8}
-                />
-                <stop
-                  offset="95%"
-                  stopColor={palette.primary[300]}
-                  stopOpacity={0}
-                />
+                <stop offset="5%" stopColor="#12EFC8" stopOpacity={0.8} />
+                <stop offset="95%" stopColor="#12EFC8" stopOpacity={0} />
               </linearGradient>
             </defs>
             <CartesianGrid vertical={false} stroke={palette.grey[800]} />

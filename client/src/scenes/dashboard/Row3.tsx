@@ -13,7 +13,7 @@ import { Cell, Pie, PieChart } from "recharts";
 
 const Row3 = () => {
   const { palette } = useTheme();
-  const pieColors = [palette.primary[800], palette.primary[500]];
+  const pieColors = ["#076050", "#12EFC8"];
 
   const { data: kpiData } = useGetKpisQuery();
   const { data: productData } = useGetProductsQuery();
@@ -170,7 +170,7 @@ const Row3 = () => {
                   dataKey="value"
                 >
                   {data.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill={pieColors[index]} />
+                    <Cell key={`cell-${entry}`} fill={pieColors[index]} />
                   ))}
                 </Pie>
               </PieChart>
@@ -187,12 +187,12 @@ const Row3 = () => {
         <Box
           height="15px"
           margin="1.25rem 1rem 0.4rem 1rem"
-          bgcolor={palette.primary[800]}
+          bgcolor="#076050"
           borderRadius="1rem"
         >
           <Box
             height="15px"
-            bgcolor={palette.primary[600]}
+            bgcolor="#12EFC8"
             borderRadius="1rem"
             width="40%"
           ></Box>
